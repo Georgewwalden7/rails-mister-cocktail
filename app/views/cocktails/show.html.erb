@@ -1,4 +1,8 @@
-<h1><%= @cocktail.name %></h1>
+<div class = "show_container">
+<div class = "show_banner">
+  <h1><%= @cocktail.name %></h1>
+</div>
+
 <h2>Ingredients of a <%= @cocktail.name %></h2>
 <%= @cocktail.preparation %>
 <ul>
@@ -11,10 +15,9 @@
   <br>
   <% end %>
 </ul>
-  <%= @cocktail.tags %>
-  <%= @cocktail.tags %>
-<% if !@cocktail.tags %>
 
+<% if !@cocktail.tags.empty? %>
+  <h3>Specials:</h3>
   <% @cocktail.tags.each do |t| %>
     <%= t %>
   <% end %>
@@ -23,3 +26,4 @@
 <%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %>
 <%= link_to 'Home', cocktails_path %>
 <%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete %>
+</div>
