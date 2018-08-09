@@ -15,7 +15,9 @@ user = JSON.parse(user_serialized)
 user.each do |item|
   new_cocktail = Cocktail.create!(
     name: item['name'],
-    preparation: item['preparation']
+    preparation: item['preparation'],
+    category: item['category'],
+    garnish: item['garnish']
   )
   item['ingredients'].each do |dose|
     if dose['unit'].nil?

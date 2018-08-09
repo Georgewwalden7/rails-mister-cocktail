@@ -66,6 +66,42 @@ body {
 .show_container {
   width: 800px;
   margin: 0 auto;
+  color: white;
+  .category {
+    padding: 30px 0;
+    p {
+      color: #e9ed17;
+      margin-bottom: 0;
+      font-size: 90px;
+      font-family: 'Tangerine', cursive;
+    }
+
+    h2 {
+      padding-left: 40px;
+      margin: 10px 0;
+      font-size: 45px;
+      font-family: sans-serif;
+    }
+  }
+
+  .preparation {
+
+    .prep_box {
+      padding-left: 40px;
+    }
+    margin-top: 20px;
+    font-size: 24px;
+    p {
+      font-size: 80px;
+      font-family: 'Tangerine', cursive;
+      color: #e9ed17;
+      margin-bottom: 0;
+    }
+    #prep {
+      margin-bottom: 5px;
+    }
+
+  }
 }
 
 .show_banner {
@@ -74,6 +110,6 @@ body {
   h1 {
     font-size: 200px;
     color: #3dc3e5;
-    font-family: 'Tangerine', cursive;
+    font-family: sans-serif;
   }
 }

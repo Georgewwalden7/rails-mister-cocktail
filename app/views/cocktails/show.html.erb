@@ -1,29 +1,43 @@
 <div class = "show_container">
-<div class = "show_banner">
-  <h1><%= @cocktail.name %></h1>
-</div>
+  <div class = "show_banner">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+  <div class= "category">
+    <p class>Category</p>
+    <h2><%= @cocktail.category %></h2>
+  </div>
 
-<h2>Ingredients of a <%= @cocktail.name %></h2>
-<%= @cocktail.preparation %>
-<ul>
-  <% @cocktail.doses.each do |d|%>
-  <li><%= d.description %></li>
-  <li><%= d.ingredient.name %></li>
-  <% if !d.label.nil? %>
-    <li><%= d.label%></li>
-  <% end %>
-  <br>
-  <% end %>
-</ul>
+  <div class = "preparation">
+    <p>Preparation</p>
+    <div class = "prep_box">
+      <div id = "prep"><%= @cocktail.preparation %></div>
+      <ul>
+        <% @cocktail.doses.each do |d|%>
+        <li><%= d.description %></li>
+        <li><%= d.ingredient.name %></li>
+        <% if !d.label.nil? %>
+          <li><%= d.label%></li>
+        <% end %>
+        <br>
+        <% end %>
+      </ul>
 
-<% if !@cocktail.tags.empty? %>
-  <h3>Specials:</h3>
-  <% @cocktail.tags.each do |t| %>
-    <%= t %>
-  <% end %>
-<% end %>
+      <% if !@cocktail.tags.empty? %>
+        <h3>Specials:</h3>
+        <% @cocktail.tags.each do |t| %>
+          <%= t %>
+        <% end %>
+      <% end %>
 
+      <%= @cocktail.garnish %>
+    </div>
+  </div>
+
+<div class="links">
 <%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %>
 <%= link_to 'Home', cocktails_path %>
 <%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete %>
+</div>
+
+
 </div>
