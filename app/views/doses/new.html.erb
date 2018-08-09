@@ -1,0 +1,6 @@
+<%= simple_form_for @dose, :url => cocktail_doses_path(@cocktail), method: :post do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description%>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,25 @@
+<h1><%= @cocktail.name %></h1>
+<h2>Ingredients of a <%= @cocktail.name %></h2>
+<%= @cocktail.preparation %>
+<ul>
+  <% @cocktail.doses.each do |d|%>
+  <li><%= d.description %></li>
+  <li><%= d.ingredient.name %></li>
+  <% if !d.label.nil? %>
+    <li><%= d.label%></li>
+  <% end %>
+  <br>
+  <% end %>
+</ul>
+  <%= @cocktail.tags %>
+  <%= @cocktail.tags %>
+<% if !@cocktail.tags %>
+
+  <% @cocktail.tags.each do |t| %>
+    <%= t %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %>
+<%= link_to 'Home', cocktails_path %>
+<%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete %>

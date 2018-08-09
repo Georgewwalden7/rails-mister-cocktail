@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>All our Cocktails (<%= @cocktails.length %>)</h1>
+  <div class="grid">
+    <% @cocktails.each do |f| %>
+      <%= link_to cocktail_path(f), :class => "no-text-decoration" do %>
+        <div class = "card">
+          <div class = "picture">
+            <img src="https://picsum.photos/300/150?image=<%= f.id + 50%>" alt="" class = "pic">
+          </div>
+          <div class="card_content">
+            <p class="title"><%= f.name  %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+
+  </div>
+  <%= link_to 'New Cocktail', new_cocktail_path %>
+</div>
