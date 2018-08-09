@@ -1,11 +1,13 @@
+<div class = "show_banner">
+  <h1><%= @cocktail.name %></h1>
+</div>
 <div class = "show_container">
-  <div class = "show_banner">
-    <h1><%= @cocktail.name %></h1>
-  </div>
+  <% if @cocktail.category %>
   <div class= "category">
     <p class>Category</p>
     <h2><%= @cocktail.category %></h2>
   </div>
+  <% end %>
 
   <div class = "preparation">
     <p>Preparation</p>
@@ -13,30 +15,34 @@
       <div id = "prep"><%= @cocktail.preparation %></div>
       <ul>
         <% @cocktail.doses.each do |d|%>
-        <li><%= d.description %></li>
-        <li><%= d.ingredient.name %></li>
-        <% if !d.label.nil? %>
-          <li><%= d.label%></li>
-        <% end %>
-        <br>
+        <div class = "dose_card">
+          <li><%= d.description %> <%= d.ingredient.name %></li>
+          <% if !d.label.nil? %>
+            <div class = "dose_label">Label: <%= d.label%></div>
+          <% end %>
+        </div>
         <% end %>
       </ul>
+      <%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %>
 
       <% if !@cocktail.tags.empty? %>
         <h3>Specials:</h3>
+        <ul class="list-unstyled">
         <% @cocktail.tags.each do |t| %>
-          <%= t %>
+          <li><%= t %></li>
         <% end %>
       <% end %>
-
-      <%= @cocktail.garnish %>
+      </ul>
+      <% if @cocktail.garnish %>
+        <h3>Garnish:</h3>
+        <div class="garnish"><%= @cocktail.garnish %></div>
+      <% end %>
     </div>
   </div>
 
 <div class="links">
-<%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail) %>
-<%= link_to 'Home', cocktails_path %>
 <%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete %>
+<%= link_to 'Return to Cocktails List', cocktails_path %>
 </div>
 
 

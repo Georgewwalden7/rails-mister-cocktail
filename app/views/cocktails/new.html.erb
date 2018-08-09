@@ -1,5 +1,13 @@
 <%= simple_form_for @cocktail do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :id=> "name" %>
+  <div class = "name">
+    <%= f.label :name %>
+    <%= f.text_field :name, :id=> "name" %>
+  </div>
+  <div class = "name">
+    <%= f.label :name %>
+    <%= f.text_field :name, :id=> "name" %>
+  </div>
   <%= f.submit %>
+
+
 <% end %>

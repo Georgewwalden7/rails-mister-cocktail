@@ -8,7 +8,7 @@
       <%= link_to cocktail_path(f), :class => "no-text-decoration" do %>
         <div class = "card">
           <div class = "picture">
-            <img src="https://picsum.photos/500/400?image=<%= f.id + 300%>" alt="" class = "pic">
+            <img src="https://picsum.photos/500/350?image=<%= f.id + 300%>" alt="" class = "pic">
           </div>
           <div class="card_content">
             <p class="title"><%= f.name  %></p>
@@ -19,5 +19,10 @@
 
 
   </div>
-  <%= link_to 'New Cocktail', new_cocktail_path %>
+
+<div class = "new_cocktail_link">
+  <%= button_to "Create a New Cocktail", new_cocktail_path, :id => "link",
+      :class => "btn btn-danger btn-large", method: :get%>
+</div>
+
 </div>

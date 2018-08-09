@@ -22,7 +22,6 @@ body {
   background-color: lightblue;
   position: relative;
   overflow: hidden;
-
 }
 
 .picture {
@@ -30,7 +29,7 @@ body {
   max-height: 100%;
   background-size: contain;
   display: block;
-  filter: brightness(70%);
+  filter: brightness(.5);
 }
 
 .card_content {
@@ -43,6 +42,32 @@ body {
   padding-right:55px;
   font-family: serif;
 }
+
+.card:hover .picture {
+  filter: brightness(1);
+}
+
+
+.new_cocktail_link {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  .btn {
+    width: 500px;
+    height: 75px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #f747d4;
+  }
+  .btn:hover {
+    background-color: #fc7be2;
+  }
+
+}
+
+
 
 .main-banner {
   width: 100%;
@@ -68,7 +93,7 @@ body {
   margin: 0 auto;
   color: white;
   .category {
-    padding: 30px 0;
+    padding:15px 0 20px 0;
     p {
       color: #e9ed17;
       margin-bottom: 0;
@@ -80,16 +105,18 @@ body {
       padding-left: 40px;
       margin: 10px 0;
       font-size: 45px;
-      font-family: sans-serif;
+      font-family: "Open Sans", "Helvetica", "sans-serif";
     }
   }
 
   .preparation {
-
+    margin-top: 0;
     .prep_box {
       padding-left: 40px;
+      .dose_card {
+        margin: 10px 0;
+      }
     }
-    margin-top: 20px;
     font-size: 24px;
     p {
       font-size: 80px;
@@ -101,6 +128,14 @@ body {
       margin-bottom: 5px;
     }
 
+    .dose_label {
+      padding-left: 10px;
+      padding-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-family: "Open Sans", "Helvetica", "sans-serif";
+    }
+
   }
 }
 
@@ -108,8 +143,27 @@ body {
   text-align: center;
   padding-top: 30px;
   h1 {
-    font-size: 200px;
+    font-size: 150px;
     color: #3dc3e5;
-    font-family: sans-serif;
+    font-family: "Open Sans", "Helvetica", "sans-serif";
   }
+}
+
+h3 {
+  margin-bottom: 5px;
+}
+
+.list-unstyled li {
+  margin-left: 20px;
+}
+
+.garnish {
+  margin-left: 20px;
+}
+
+.links {
+  font-size: 30px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
 }
