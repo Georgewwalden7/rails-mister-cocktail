@@ -1,13 +1,33 @@
-<%= simple_form_for @cocktail do |f| %>
-  <div class = "name">
-    <%= f.label :name %>
-    <%= f.text_field :name, :id=> "name" %>
-  </div>
-  <div class = "name">
-    <%= f.label :name %>
-    <%= f.text_field :name, :id=> "name" %>
-  </div>
-  <%= f.submit %>
+<div class = "create_container">
+  <h1>Create a new Cocktail!</h1>
+  <div class= "create_form_container">
 
+    <div class = "create_cocktail">
+      <%= simple_form_for @cocktail do |f| %>
+        <div class = "name">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div class = "category">
+          <%= f.label :category %>
+          <%= f.text_field :category %>
+        </div>
+        <div class = "preparation">
+          <%= f.label :preparation %>
+          <%= f.text_field :preparation %>
+        </div>
+        <div class = "garnish">
+          <%= f.label :garnish %>
+          <%= f.text_field :garnish %>
+        </div>
+        <%= f.submit %>
+      <% end %>
+    </div>
 
-<% end %>
+    <div class = "create_doses">
+      <%= link_to 'Add Dose', new_cocktail_dose_path(:cocktail_id) %>
+    </div>
+
+  </div>
+
+</div>
