@@ -64,10 +64,7 @@ body {
   .btn:hover {
     background-color: #fc7be2;
   }
-
 }
-
-
 
 .main-banner {
   width: 100%;
@@ -81,8 +78,8 @@ body {
   color: white;
   overflow: hidden;
   h1 {
-    font-size: 200px;
-    padding-top: 30px;
+    font-size: 170px;
+    padding-top: 10px;
     font-family: 'Tangerine', cursive;
   }
 }
@@ -169,6 +166,37 @@ h3 {
 }
 
 .create_container {
+  display: flex;
   width: 1500px;
   margin: 0 auto;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  .create_form_container {
+    margin-top: 250px;
+
+  }
+  h1 {
+    color: white;
+    text-align: center;
+  }
+  .create_cocktail {
+    font-size: 24px;
+  }
+  .label_block {
+      display: block;
+      color: white;
+      margin-top: 10px;
+      padding-left: 10px;
+  }
+  .submit {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
 }
+
+
+

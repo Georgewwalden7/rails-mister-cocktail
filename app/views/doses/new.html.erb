@@ -1,6 +1,15 @@
-<%= simple_form_for @dose, :url => cocktail_doses_path(@cocktail), method: :post do |f| %>
-  <%= f.label :description %>
-  <%= f.text_field :description%>
-  <%= f.input :ingredient_id, collection: Ingredient.all %>
-  <%= f.submit %>
-<% end %>
+<div class = "create_container">
+  <div class= "create_form_container">
+  <h1>Create a new Dose!</h1>
+    <div class = "create_cocktail">
+      <%= simple_form_for @dose, :url => cocktail_doses_path(@cocktail), method: :post do |f| %>
+        <%= f.input :description, :input_html => {:size => 30}, label_html: { class: 'label_block' } %>
+        <%= f.input :ingredient_id, label_html: { class: 'label_block' }, collection: Ingredient.all %>
+        <%= f.input :label, :input_html => {:size => 30}, label_html: { class: 'label_block' } %>
+        <div class = "submit">
+                <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
