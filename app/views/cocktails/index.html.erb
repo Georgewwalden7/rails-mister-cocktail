@@ -11,7 +11,11 @@
       <%= link_to cocktail_path(f), :class => "no-text-decoration" do %>
         <div class = "card">
           <div class = "picture">
-            <img src="https://picsum.photos/500/350?image=<%= f.id + 8%>" alt="" class = "pic">
+            <% if f.photo? %>
+              <%= cl_image_tag f.photo, height: 350, width: 500, :class => "img_preview" %>
+            <% else %>
+              <img src="https://picsum.photos/500/350?image=<%= f.id + 8%>" alt="" class = "pic">
+            <% end %>
           </div>
           <div class="card_content">
             <p class="title"><%= f.name  %></p>

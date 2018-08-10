@@ -9,8 +9,12 @@
         <%= f.input :category, :input_html => {:size => 60},label_html: { class: 'label_block' } %>
         <%= f.input :preparation, :as => :text, :input_html => {:rows => 3, :cols => 60},label_html: { class: 'label_block' } %>
         <%= f.input :garnish, :input_html => {:size => 60},label_html: { class: 'label_block' } %>
+        <div id = "white">
+          <%= f.input :photo, label_html: { class: 'label_block' } %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
         <div class = "submit">
-                <%= f.button :submit %>
+          <%= f.button :submit %>
         </div>
       <% end %>
     </div>

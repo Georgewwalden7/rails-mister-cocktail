@@ -1,6 +1,13 @@
 <div class = "show_banner">
   <h1><%= @cocktail.name %></h1>
 </div>
+<div class = "flex_box">
+<% if @cocktail.photo? %>
+<div class="show_photo">
+   <%= cl_image_tag @cocktail.photo, height: 400, width: 600, :class => "img_preview" %>
+</div>
+<% end %>
+
 <div class = "show_container">
   <% if @cocktail.category && @cocktail.category != "" %>
   <div class= "category">
@@ -38,12 +45,15 @@
         <div class="garnish"><%= @cocktail.garnish %></div>
       <% end %>
     </div>
+
+
   </div>
-
-<div class="links">
-<%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete %>
-<%= link_to 'Return to Cocktails List', root_path %>
 </div>
 
 
+
 </div>
+ <div class="links">
+    <%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete %>
+    <%= link_to 'Return to Cocktails List', root_path %>
+  </div>
