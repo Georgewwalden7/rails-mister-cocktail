@@ -2,7 +2,7 @@
   <h1><%= @cocktail.name %></h1>
 </div>
 <div class = "show_container">
-  <% if @cocktail.category %>
+  <% if @cocktail.category && @cocktail.category != "" %>
   <div class= "category">
     <p class>Category</p>
     <h2><%= @cocktail.category %></h2>
@@ -17,7 +17,7 @@
         <% @cocktail.doses.each do |d|%>
         <div class = "dose_card">
           <li><%= d.description %> <%= d.ingredient.name %></li>
-          <% if !d.label.nil? %>
+          <% if d.label && d.label != "" %>
             <div class = "dose_label">Label: <%= d.label%></div>
           <% end %>
         </div>
@@ -33,7 +33,7 @@
         <% end %>
       <% end %>
       </ul>
-      <% if @cocktail.garnish %>
+      <% if @cocktail.garnish && @cocktail.garnish != "" %>
         <h3>Garnish:</h3>
         <div class="garnish"><%= @cocktail.garnish %></div>
       <% end %>

@@ -49,20 +49,28 @@ body {
 
 
 .new_cocktail_link {
-  margin-top: 40px;
+  margin-top: 0px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100px;
+
   .btn {
     width: 500px;
     height: 75px;
     font-size: 30px;
     border-radius: 10px;
-    background-color: #f747d4;
+    background-color: black;
+    filter: brightness(.7);
+    color: #1DFEBD;
+    border: solid;
+    border-color: #1DFEBD;
   }
   .btn:hover {
-    background-color: #fc7be2;
+    background-color: #1DFEBD;
+    color: black;
+    filter: brightness(1);
   }
 }
 
@@ -72,7 +80,7 @@ body {
   background-image: url('cocktail.jpg');
   background-size: contain;
   background-position: center;
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   border-radius: 10px;
   text-align: center;
   color: white;

@@ -1,8 +1,10 @@
 <div class = "create_container">
   <div class= "create_form_container">
-  <h1>Create a new Cocktail!</h1>
+  <h1>Design A New Cocktail</h1>
     <div class = "create_cocktail">
       <%= simple_form_for @cocktail do |f| %>
+        <%= f.error_notification %>
+        <%=  f.error_notification errors: true %>
         <%= f.input :name, :input_html => {:size => 60}, label_html: { class: 'label_block' } %>
         <%= f.input :category, :input_html => {:size => 60},label_html: { class: 'label_block' } %>
         <%= f.input :preparation, :as => :text, :input_html => {:rows => 3, :cols => 60},label_html: { class: 'label_block' } %>
@@ -12,7 +14,10 @@
         </div>
       <% end %>
     </div>
-
+    <div class="links">
+      <br>
+      <%= link_to 'Return to Cocktails List', root_path %>
+    </div>
   </div>
 
 </div>

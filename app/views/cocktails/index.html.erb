@@ -1,14 +1,17 @@
 <div class="main-banner">
   <h1>Cocktail Heaven</h1>
 </div>
-
+<div class = "new_cocktail_link">
+  <%= button_to "Design a New Cocktail", new_cocktail_path, :id => "link",
+      :class => "btn btn-danger btn-large", method: :get%>
+</div>
 <div class="container">
   <div class="grid">
     <% @cocktails.each do |f| %>
       <%= link_to cocktail_path(f), :class => "no-text-decoration" do %>
         <div class = "card">
           <div class = "picture">
-            <img src="https://picsum.photos/500/350?image=<%= f.id + 300%>" alt="" class = "pic">
+            <img src="https://picsum.photos/500/350?image=<%= f.id + 8%>" alt="" class = "pic">
           </div>
           <div class="card_content">
             <p class="title"><%= f.name  %></p>
@@ -20,9 +23,6 @@
 
   </div>
 
-<div class = "new_cocktail_link">
-  <%= button_to "Create a New Cocktail", new_cocktail_path, :id => "link",
-      :class => "btn btn-danger btn-large", method: :get%>
-</div>
+
 
 </div>
